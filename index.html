@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamad Zeidan Teaching Portfolio</title>
+<meta name="description" content="Teaching portfolio of Mohamad Zeidan, Ph.D., civil engineer and educator in water, hydraulics and engineering design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&display=swap">
+<style>
+/* Layout: a working engineer's scrapbook. Navy and teal diagonals from his slide deck, photos pinned at slight angles, one serif family throughout. */
+:root{
+  --paper:#fbfbf8; --ink:#14213a; --muted:#56607a; --navy:#16305f; --teal:#13aeb2; --mist:#e3e7ee; --card:#ffffff; --tape:rgba(19,174,178,.28); --line:#cfd5df; --bar:#16305f; --bar-ink:#eef2f9;
+  --serif:"Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --s-1:.82rem; --s0:1.0625rem; --s1:1.3rem; --s2:1.75rem; --s3:2.5rem; --s4:clamp(2.6rem,7vw,4.6rem);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0f1828;--ink:#e7ebf3;--muted:#a3adc2;--navy:#7fa3e0;--teal:#3fd0d3;--mist:#1c2840;--card:#16213a;--tape:rgba(63,208,211,.25);--line:#2c3a57;--bar:#0a1222;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0f1828;--ink:#e7ebf3;--muted:#a3adc2;--navy:#7fa3e0;--teal:#3fd0d3;--mist:#1c2840;--card:#16213a;--tape:rgba(63,208,211,.25);--line:#2c3a57;--bar:#0a1222;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:var(--s0);line-height:1.6;font-optical-sizing:auto;overflow-x:hidden}
+img{max-width:100%;display:block}
+figure{margin:0}
+a{color:var(--navy);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--teal)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+h1,h2,h3{font-weight:700;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:var(--s3);letter-spacing:-.01em}
+h3{font-size:var(--s1)}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:var(--s-1);text-transform:uppercase;letter-spacing:.14em;font-weight:600;color:var(--teal)}
+.muted{color:var(--muted)}
+.prose{max-width:64ch}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(8,16,34,.06)}
+nav.top .wrap{display:flex;gap:24px;align-items:flex-end;padding-block:0}
+nav.top .me{font-weight:700;text-decoration:none;color:var(--ink);font-size:1.1rem;white-space:nowrap;padding-block:16px}
+nav.top ul{display:flex;gap:30px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.top ul::-webkit-scrollbar{display:none}
+nav.top ul a{display:block;text-decoration:none;color:var(--muted);font-size:1.22rem;font-weight:600;padding:14px 2px 12px;border-bottom:4px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s}
+nav.top ul a:hover{color:var(--navy);border-bottom-color:var(--line)}
+nav.top ul a[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--teal)}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding-block:56px 72px;align-items:center}
+.hero h1{font-size:var(--s4);font-weight:800;letter-spacing:-.02em;font-variation-settings:"opsz" 60}
+.hero .role{font-size:var(--s1);font-style:italic;color:var(--muted);margin-top:10px}
+.hero .lead{font-size:1.2rem;margin-top:22px;max-width:46ch}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:24px;padding:0;list-style:none}
+.hero .methods{margin-top:10px}
+.hero .facts.methods li{border-color:var(--teal);background:transparent;color:var(--navy)}
+.hero .facts li{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:.9rem;background:var(--card)}
+.slash{position:absolute;pointer-events:none;z-index:0}
+.slash.a{right:-120px;top:-60px;width:360px;height:720px;background:var(--navy);transform:rotate(38deg);opacity:.95}
+.slash.b{right:150px;top:120px;width:120px;height:520px;background:var(--teal);transform:rotate(38deg)}
+.slash.c{right:60px;top:300px;width:140px;height:400px;background:var(--mist);transform:rotate(38deg)}
+.hero .wrap>*{position:relative;z-index:1}
+.collage{position:relative;min-height:480px}
+.pin{position:absolute;background:var(--card);padding:8px 8px 26px;box-shadow:0 10px 24px rgba(10,20,40,.18);transition:transform .25s}
+.pin:hover{transform:rotate(0) scale(1.03)!important;z-index:3}
+.pin img{width:100%;height:100%;object-fit:cover}
+.pin figcaption{position:absolute;left:10px;right:10px;bottom:5px;font-size:.78rem;font-style:italic;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pin::after{content:"";position:absolute;top:-10px;left:50%;width:70px;height:20px;margin-left:-35px;background:var(--tape);transform:rotate(-4deg)}
+.collage .p1{width:62%;aspect-ratio:4/3;left:0;top:10px;transform:rotate(-4deg)}
+.collage .p2{width:44%;aspect-ratio:3/4;right:2%;top:0;transform:rotate(5deg)}
+.collage .p3{width:54%;aspect-ratio:16/10;left:4%;top:270px;transform:rotate(2deg)}
+
+.career{padding-block:8px 36px}
+.career-scroll{overflow-x:auto;padding-bottom:6px}
+.career-track{position:relative;min-width:760px;height:156px}
+.seg{position:absolute;top:22px;height:86px;padding:8px 10px;border-top:6px solid var(--navy);background:var(--card);box-shadow:0 4px 12px rgba(10,20,40,.08);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.seg.work{border-top-color:var(--teal)}
+.seg b{font-size:1.02rem;line-height:1.2;white-space:nowrap}
+.seg .sub{font-size:.78rem;color:var(--muted);line-height:1.25;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg .when{font-size:.76rem;color:var(--navy);margin-top:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
+.seg+.seg{margin-left:4px}
+.axis{position:absolute;left:0;right:0;top:122px;border-top:2px solid var(--line)}
+.tick{position:absolute;top:128px;transform:translateX(-50%);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tick::before{content:"";position:absolute;left:50%;top:-8px;height:6px;border-left:2px solid var(--line)}
+.career-key{font-size:.85rem;color:var(--muted);display:flex;gap:8px;align-items:center;margin-top:4px}
+.career-key .k{display:inline-block;width:18px;height:6px;background:var(--navy)}
+.career-key .k.work{background:var(--teal);margin-left:12px}
+/* sections */
+section{padding-block:72px}
+section+section{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:10px;margin-bottom:36px}
+
+/* teaching timeline */
+.tl{display:grid;gap:0;border-left:3px solid var(--teal);margin-left:6px}
+.tl-item{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:18px 0 18px 24px;position:relative}
+.tl-item::before{content:"";position:absolute;left:-9px;top:26px;width:15px;height:15px;background:var(--paper);border:3px solid var(--navy);transform:rotate(45deg)}
+.tl-when{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.tl-what{min-width:0}
+.tl-what h3{font-size:1.18rem}
+.tl-what .where{font-style:italic;color:var(--muted);margin:2px 0 6px}
+.tl-what ul{margin:6px 0 0;padding-left:1.1em}
+.tl-what li{margin:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:.82rem;padding:2px 10px;border-radius:999px;background:var(--mist)}
+
+/* approach */
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.approach .step{border-top:3px solid var(--navy);padding-top:14px}
+.approach .step span{display:block;font-size:var(--s2);font-weight:800;color:var(--teal);line-height:1}
+.approach h3{margin:8px 0 8px}
+.tech{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tech div{background:var(--card);border:1px solid var(--line);padding:14px 16px}
+.tech b{display:block;color:var(--navy)}
+
+/* tool */
+.tool{display:grid;grid-template-columns:320px 1fr;gap:28px;background:var(--card);border:1px solid var(--line);padding:24px;position:relative}
+.tool::before{content:"Classroom tool";position:absolute;top:-13px;left:20px;background:var(--teal);color:#06292a;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 10px;font-weight:700}
+.field{display:grid;gap:4px;margin-bottom:14px}
+.field label{font-size:.92rem;font-weight:600;display:flex;justify-content:space-between}
+.field output{font-variant-numeric:tabular-nums;color:var(--navy)}
+.field input[type=range]{width:100%;accent-color:var(--teal)}
+.field select{font:inherit;padding:6px 8px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.res{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.res div{border-left:3px solid var(--teal);padding-left:10px}
+.res small{display:block;color:var(--muted);font-size:.8rem}
+.res b{font-size:1.25rem;font-variant-numeric:tabular-nums}
+.tool svg{width:100%;height:auto;display:block}
+.tool .note{margin-top:12px;font-style:italic;color:var(--muted);font-size:.95rem}
+
+/* projects */
+.era{margin-top:56px}
+.era:first-of-type{margin-top:0}
+.era-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:6px;margin-bottom:28px}
+.era-head h3{font-size:var(--s2)}
+.era-head span{color:var(--muted);font-style:italic}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:56px}
+.proj:nth-child(even) .proj-pics{order:2}
+.proj-text{min-width:0;display:grid;gap:10px}
+.proj.wide{grid-template-columns:1fr}
+.proj.wide .proj-pics{order:0;grid-template-columns:1fr 1fr;max-width:900px}
+.proj-pics .pin.span{grid-column:1/-1;transform:rotate(-.6deg)}
+.pubs{margin:4px 0;padding-left:1.3em;display:grid;gap:8px}
+.pubs .pa{color:var(--muted)}
+.pubs a{color:var(--ink);font-weight:600;text-decoration-color:var(--teal)}
+.proj-text .meta{font-size:.92rem;color:var(--muted)}
+.proj-text .meta b{color:var(--ink);font-weight:600}
+.inclass{background:var(--mist);padding:10px 14px;border-left:4px solid var(--teal);font-size:.98rem}
+.inclass b{color:var(--navy)}
+.proj-pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;align-items:start}
+.proj-pics .pin{position:relative;transform:rotate(-1.2deg)}
+.proj-pics .pin:nth-child(2){transform:rotate(1.4deg)}
+.proj-pics .pin.solo{transform:rotate(-.8deg)}
+.proj-pics img{width:100%;height:auto;object-fit:contain;background:#fff}
+.grid-small{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.mini{background:var(--card);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
+.mini img{width:100%;aspect-ratio:16/10;object-fit:contain;background:#fff}
+.mini .body{padding:14px 16px;display:grid;gap:6px;align-content:start}
+.mini h4{margin:0;font-size:1.08rem}
+.mini .yr{font-size:.85rem;color:var(--muted)}
+
+/* outreach */
+.band{background:var(--navy);color:#f2f5fa}
+:root[data-theme="dark"] .band{background:#0a1222}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .band{background:#0a1222}}
+.band .eyebrow{color:#5fe0e3}
+.band .muted{color:#b9c4da}
+.band a{color:#9fe8ea}
+.band .inclass{background:rgba(255,255,255,.08);color:#f2f5fa}
+.band .inclass b{color:#9fe8ea}
+.band .pin{background:#f4f6fa}
+.band .pin figcaption{color:#56607a}
+.outreach{display:grid;gap:64px}
+.story{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center}
+.story:nth-child(even) .story-pics{order:-1}
+.story-text{display:grid;gap:10px;min-width:0}
+.story-pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;transform:rotate(-1deg)}
+.story-pics .pin{position:relative}
+.story-pics .pin img{aspect-ratio:4/3}
+.story-pics .pin:nth-child(2){transform:rotate(3deg);margin-top:24px}
+.story-pics .pin:nth-child(3){transform:rotate(-2deg)}
+.story-pics .pin:nth-child(4){transform:rotate(2deg);margin-top:-14px}
+
+/* recognition */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.list li{display:grid;grid-template-columns:96px 1fr;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.list .y{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+
+.panel[hidden]{display:none!important}
+
+footer{padding-block:48px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.copy{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:2px 10px;cursor:pointer;margin-left:6px}
+
+@media (max-width:860px){
+  nav.top .wrap{flex-direction:column;align-items:stretch;gap:0}
+  nav.top .me{padding-block:10px 0}
+  nav.top ul{margin:0;gap:22px}
+  nav.top ul a{font-size:1.08rem;padding:8px 2px 9px}
+  .hero .wrap{grid-template-columns:1fr;padding-block:36px 48px}
+  .collage{min-height:380px;max-width:520px}
+  .slash.a{right:-150px;top:-200px;width:220px;height:420px}.slash.b,.slash.c{display:none}
+  .approach{grid-template-columns:1fr}
+  .tool{grid-template-columns:1fr}
+  .proj,.story,.two{grid-template-columns:1fr}
+  .proj:nth-child(even) .proj-pics,.story:nth-child(even) .story-pics{order:0}
+  
+  .tl-item{grid-template-columns:1fr;gap:4px}
+  .res{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:480px){
+  .collage{min-height:300px}
+  .collage .p3{top:180px}
+  
+  h2{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a class="me" href="#top">Mohamad Zeidan</a>
+    <ul class="tabs" role="tablist">
+      <li><a href="#teaching" data-tab="teaching">Teaching</a></li>
+      <li><a href="#research" data-tab="research">Research</a></li>
+      <li><a href="#industry" data-tab="industry">Industry</a></li>
+      <li><a href="#outreach" data-tab="outreach">Outreach</a></li>
+      <li><a href="#contact" data-tab="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="slash a"></div><div class="slash b"></div><div class="slash c"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Teaching portfolio</p>
+      <h1>Mohamad Zeidan, Ph.D.</h1>
+      <p class="role">Civil engineer and educator. Water, hydraulics and engineering design.</p>
+      <p class="lead">I teach engineering the way I learned it: starting from a real system, with real data, and with my hands on the hardware. Seven years of university teaching in Canada, the Netherlands and Israel, and a career spent between the lab, the utility and the field.</p>
+      <ul class="facts">
+        <li>Registered engineer, Israel</li>
+        <li>Postdoctoral Fellow, UBC Okanagan</li>
+        <li>B.Sc., M.Sc., Ph.D., Technion</li>
+        <li>P.Eng. (EGBC) expected Dec 2026</li>
+      </ul>
+      <ul class="facts methods" aria-label="Methods">
+        <li>Data-driven modelling</li>
+        <li>Machine learning</li>
+        <li>Physics-informed neural networks (PINN)</li>
+        <li>CFD</li>
+        <li>FEM</li>
+        <li>Hydraulic network modelling</li>
+      </ul>
+    </div>
+    <div class="collage" aria-label="Photos from projects">
+      <figure class="pin p1"><img src="img/ewb-look.jpg" alt="The student team looking up at the finished wind turbine" loading="eager"><figcaption>Finished wind turbine, EWB</figcaption></figure>
+      <figure class="pin p2"><img src="img/aqua-lettuce.jpg" alt="Lettuce growing in the finished school aquaponic system"><figcaption>School aquaponics, first harvest</figcaption></figure>
+      <figure class="pin p3"><img src="img/dam-aerial.jpg" alt="Aerial view of the Okanagan micro-reservoir"><figcaption>Okanagan micro-reservoir</figcaption></figure>
+    </div>
+  </div>
+</header>
+<div class="career" aria-label="Career timeline">
+  <div class="wrap">
+    <div class="career-scroll">
+      <div class="career-track">
+        <div class="seg edu" style="left:7.37%;width:24.04%"><b>B.Sc.</b><span class="sub">Civil and Env. Eng., Technion</span><span class="when">2012 to 2016</span></div>
+        <div class="seg edu" style="left:31.41%;width:14.42%"><b>M.Sc.</b><span class="sub">Technion</span><span class="when">2016 to 2018</span></div>
+        <div class="seg edu" style="left:46.35%;width:25.12%"><b>Ph.D.</b><span class="sub">Technion</span><span class="when">2018 to 2022</span></div>
+        <div class="seg work" style="left:71.99%;width:13.91%"><b>KWR</b><span class="sub">Netherlands</span><span class="when">2022 to 2024</span></div>
+        <div class="seg work" style="left:87.5%;width:11.22%"><b>UBCO</b><span class="sub">Postdoc, lecturer</span><span class="when">2025 to now</span></div>
+        <div class="axis"></div>
+        <span class="tick" style="left:2.56%">2012</span>
+        <span class="tick" style="left:15.38%">2014</span>
+        <span class="tick" style="left:28.21%">2016</span>
+        <span class="tick" style="left:41.03%">2018</span>
+        <span class="tick" style="left:53.85%">2020</span>
+        <span class="tick" style="left:66.67%">2022</span>
+        <span class="tick" style="left:79.49%">2024</span>
+        <span class="tick" style="left:92.31%">2026</span>
+      </div>
+    </div>
+    <p class="career-key"><span class="k edu"></span>Education <span class="k work"></span>Work</p>
+  </div>
+</div>
+
+<main>
+<div class="panel" id="teaching" data-panel="teaching">
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Teaching</p>
+      <h2>Courses I have taught</h2>
+      <p class="prose muted">From first-year design to graduate flow mechanics, as lecturer of record, course designer, guest lecturer and lead teaching assistant.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-when">2026</div>
+        <div class="tl-what">
+          <h3>APSC 169, Fundamentals of Sustainable Engineering Design</h3>
+          <p class="where">UBC Okanagan, School of Engineering. Co-lecturer, 50% FTE</p>
+          <ul>
+            <li>First-year design course taken by every incoming engineering student, and the entry point to the design, surveying and project management sequence.</li>
+            <li>Teams work on open-ended sustainability problems from problem definition through prototyping, testing and selection.</li>
+            <li>Assessment is built on iterative deliverables: students show a competency, get feedback, and show it again.</li>
+          </ul>
+          <div class="chips"><span class="chip">Design cycle</span><span class="chip">Team projects</span><span class="chip">Technical communication</span><span class="chip">Lab reporting</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2023 to 2026</div>
+        <div class="tl-what">
+          <h3>Guest lectures</h3>
+          <p class="where">UBC Okanagan, Utrecht University, TU Delft</p>
+          <ul>
+            <li>ENGR 447, Water and Wastewater Treatment, UBC Okanagan (2025, 2026).</li>
+            <li>Sewage and Water Distribution Systems from Source to Recipient, Utrecht University (2023, 2024).</li>
+            <li>Stochastic Demand Modelling at the Scale of the Tap: SIMDEUM Explained, TU Delft (2023, 2024).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2020</div>
+        <div class="tl-what">
+          <h3>Fluid Mechanics, third year, 3.5 credits</h3>
+          <p class="where">Sami Shamoon College of Engineering. Lecturer with sole responsibility</p>
+          <ul>
+            <li>Designed the full course: syllabus, lectures, assignments and all examinations.</li>
+            <li>Three lecture hours and two tutorial hours a week; supervised the course teaching assistant.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2019</div>
+        <div class="tl-what">
+          <h3>Water Resources; Water Distribution Systems Design; Pipes and Pumps</h3>
+          <p class="where">Sakhnin Academic College. Lecturer</p>
+          <ul>
+            <li>Built and delivered three courses from scratch for practical water engineering students.</li>
+            <li>Curriculum organised around applied infrastructure design, with assessment tied to design deliverables.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2016 to 2022</div>
+        <div class="tl-what">
+          <h3>Teaching Assistant and Lead Teaching Assistant</h3>
+          <p class="where">Technion, Faculty of Civil and Environmental Engineering</p>
+          <ul>
+            <li>Six years across seven core courses: tutorials, assessment design, grading and student support.</li>
+            <li>As Lead TA, coordinated a team of five teaching assistants to keep sections consistent.</li>
+            <li>Twice named the Faculty's Outstanding Teaching Assistant.</li>
+          </ul>
+          <div class="chips"><span class="chip">Environmental Flow Mechanics (grad)</span><span class="chip">Hydraulic Engineering and Reservoirs</span><span class="chip">Design of Water and Wastewater Systems</span><span class="chip">Water Resources Systems Engineering</span><span class="chip">Hydraulics and Hydrology</span><span class="chip">Numerical Methods</span><span class="chip">Graphical and Engineering Information</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Approach</p>
+      <h2>How I teach</h2>
+    </div>
+    <div class="approach">
+      <div class="step"><span>1</span><h3>Start from a real system</h3><p>A reservoir that spills every summer, a quarry that floods, a school that needs power. Students meet the theory because a real problem asks for it.</p></div>
+      <div class="step"><span>2</span><h3>Measure, model, then question the model</h3><p>Students measure in the lab, build a model, and explain why the two disagree. That argument is where engineering judgment is learned.</p></div>
+      <div class="step"><span>3</span><h3>Assess competencies, not one exam</h3><p>Iterative deliverables with feedback in between, as in APSC 169. A student who improves between attempts should see that in the grade.</p></div>
+    </div>
+    <div class="tech" aria-label="Learning technologies">
+      <div><b>iClicker</b>Live concept checks during lecture, so I see misconceptions while there is still time to fix them.</div>
+      <div><b>iPeer</b>Structured peer evaluation for team projects, so individual contribution is visible.</div>
+      <div><b>Canvas</b>Course site, staged submissions and feedback for iterative deliverables.</div>
+      <div><b>Tools I build</b>Small interactive models in Python and the browser, like the one below.</div>
+    </div>
+  </div>
+</section>
+
+<section id="tool">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Learning technology</p>
+      <h2>Pipe flow explorer</h2>
+      <p class="prose muted">A small tool I use to let students feel the Darcy-Weisbach equation before they memorise it. Change the flow, diameter or pipe material and watch the hydraulic grade line respond.</p>
+    </div>
+    <div class="tool">
+      <form id="pf" onsubmit="return false">
+        <div class="field"><label for="q">Flow <output id="qo">20 L/s</output></label><input id="q" type="range" min="1" max="120" step="1" value="20"></div>
+        <div class="field"><label for="d">Diameter <output id="do">150 mm</output></label><input id="d" type="range" min="50" max="600" step="25" value="150"></div>
+        <div class="field"><label for="l">Length <output id="lo">500 m</output></label><input id="l" type="range" min="50" max="3000" step="50" value="500"></div>
+        <div class="field"><label for="m">Pipe material</label>
+          <select id="m">
+            <option value="0.0015">PVC (ε = 0.0015 mm)</option>
+            <option value="0.25">New cast iron (ε = 0.25 mm)</option>
+            <option value="0.12">Ductile iron, lined (ε = 0.12 mm)</option>
+            <option value="1.0">Concrete (ε = 1.0 mm)</option>
+            <option value="3.0">Old tuberculated main (ε = 3 mm)</option>
+          </select>
+        </div>
+        <p class="muted" style="font-size:.88rem">Water at 20 °C, ν = 1.0 × 10⁻⁶ m²/s. Friction factor from Swamee-Jain, or 64/Re for laminar flow.</p>
+      </form>
+      <div style="min-width:0">
+        <svg id="sk" viewBox="0 0 640 260" role="img" aria-label="Sketch of a tank feeding a pipe, with the hydraulic grade line dropping along the pipe">
+          <rect x="20" y="40" width="90" height="180" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <rect x="22" y="60" width="86" height="158" fill="var(--teal)" opacity=".25"/>
+          <line x1="22" y1="60" x2="108" y2="60" stroke="var(--teal)" stroke-width="2"/>
+          <text x="30" y="54" font-size="12" fill="var(--muted)" font-family="inherit">reservoir level</text>
+          <rect x="110" y="200" width="500" height="16" fill="var(--mist)" stroke="var(--ink)" stroke-width="1.5"/>
+          <line id="hgl" x1="110" y1="60" x2="610" y2="120" stroke="var(--navy)" stroke-width="3"/>
+          <line x1="110" y1="60" x2="610" y2="60" stroke="var(--muted)" stroke-dasharray="5 5" stroke-width="1"/>
+          <line id="dim" x1="620" y1="60" x2="620" y2="120" stroke="var(--teal)" stroke-width="2"/>
+          <text id="dimt" x="606" y="94" font-size="14" font-weight="700" fill="var(--navy)" text-anchor="end" font-family="inherit">hf</text>
+          <text x="250" y="244" font-size="12" fill="var(--muted)" font-family="inherit">pipe, flow to the right →</text>
+          <text id="hglt" x="300" y="80" font-size="12" fill="var(--navy)" font-family="inherit">hydraulic grade line</text>
+        </svg>
+        <div class="res">
+          <div><small>Velocity</small><b id="rv">-</b></div>
+          <div><small>Reynolds number</small><b id="rr">-</b></div>
+          <div><small>Friction factor</small><b id="rf">-</b></div>
+          <div><small>Head loss</small><b id="rh">-</b></div>
+        </div>
+        <p class="note" id="rn"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="recognition">
+  <div class="wrap two">
+    <div>
+      <div class="sec-head"><p class="eyebrow">Recognition</p><h2>Awards</h2></div>
+      <ul class="list">
+        <li><span class="y">2026</span><span>Best Talk Award, UBC Okanagan Postdoctoral Research Day</span></li>
+        <li><span class="y">2023</span><span>First place, Aqualibrium international competition (CCWI), designing and physically assembling a working water distribution network</span></li>
+        <li><span class="y">2022</span><span>Sandor Szego Award for Excellence in Teaching: Perennial Faculty Outstanding Teaching Assistant, Technion (Spring 2022)</span></li>
+        <li><span class="y">2021</span><span>Faculty Outstanding Teaching Assistant, Technion (Spring 2021)</span></li>
+        <li><span class="y">2019</span><span>Rina and Shragaa Irmay Prize in Environmental Engineering, Technion</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sec-head"><p class="eyebrow">Mentoring</p><h2>Students and teams</h2></div>
+      <ul class="list">
+        <li><span class="y">2025 to now</span><span>Help mentor three Ph.D. students and one M.A.Sc. student at UBC Okanagan in modelling, data analysis and technical writing</span></li>
+        <li><span class="y">2022 to 2024</span><span>Mentored a visiting master's student at KWR</span></li>
+        <li><span class="y">2020</span><span>Supervised the Fluid Mechanics teaching assistant at Sami Shamoon College</span></li>
+        <li><span class="y">2016 to 2022</span><span>Lead TA coordinating a team of five teaching assistants at the Technion</span></li>
+        <li><span class="y">2014 to 2019</span><span>Group leader of an interdisciplinary student team, Engineers Without Borders</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+<div class="panel" id="research" data-panel="research">
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Projects</p>
+      <h2>Work I bring into the classroom</h2>
+      <p class="prose muted">Every project below started as someone's real problem: an operator, a utility, a grower, a city. Each one ends with how it feeds my teaching.</p>
+    </div>
+
+    <div class="era">
+      <div class="era-head"><h3>UBC Okanagan</h3><span>Postdoctoral Fellow, 2025 to present</span></div>
+
+      <article class="proj">
+        <div class="proj-text">
+          <p class="eyebrow">Irrigation | Decision support</p>
+          <h3>Forecasting demand for a micro-reservoir</h3>
+          <p class="meta"><b>Partner:</b> City of Kelowna &nbsp;·&nbsp; <b>Role:</b> modelling and tool development</p>
+          <p>Operators cannot see irrigation demand coming, so they keep a small pond full and the surplus spills. I built a forecast that tells them how much water to request 4 to 24 hours ahead, with a dam operations simulation and a gate position app on top.</p>
+          <p>At a 4 hour horizon the forecast error is 45.5 L/s (RMSE), validated on two held-out seasons, and could save about 479,000 m³ of spills a season.</p>
+          <p class="inclass"><b>In class:</b> the pond's stage-storage curve and mass balance make a ready-made reservoir routing exercise for hydraulics students.</p>
+        </div>
+        <div class="proj-pics">
+          <figure class="pin"><img src="img/dam-aerial.jpg" alt="Aerial view of the micro-reservoir with inflow, storage, outflow and spillway" loading="lazy"><figcaption>Inflow, storage, spillway</figcaption></figure>
+          <figure class="pin"><img src="img/dam-gate-app.jpg" alt="Sketch of the outlet gate and the gate position app" loading="lazy"><figcaption>Gate position app</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-text">
+          <p class="eyebrow">NSERC Alliance | 2026 to 2027</p>
+          <h3>Penticton corrosion study</h3>
+          <p class="meta"><b>Partners:</b> City of Penticton, Carollo &nbsp;·&nbsp; <b>Role:</b> project lead, network corrosion modelling</p>
+          <p>Penticton blends water from Okanagan Lake and Penticton Creek. We study how blending, seasons and treatment drive pipe corrosion: iron and copper coupon jars run at the treatment plant and in the UBCO lab, the network is sampled at 15 points, and everything feeds a model that scores each pipe's cumulative corrosion exposure.</p>
+          <p class="inclass"><b>In class:</b> coupon jar tests are a laboratory practicum in water chemistry that connects directly to a city's asset decisions.</p>
+        </div>
+        <div class="proj-pics">
+          <figure class="pin solo"><img src="img/penticton-diagram.jpg" alt="Source blending at the treatment plant, coupon jars in the lab, and the city network corrosion map" loading="lazy"><figcaption>From bench jars to a corrosion map of the city network</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-text">
+          <p class="eyebrow">Water demand | Published 2026</p>
+          <h3>Behaviourally informed daily water demand</h3>
+          <p class="meta"><b>Region:</b> North Okanagan &nbsp;·&nbsp; <b>Output:</b> Urban Lifeline (2026), BCWWA 2026 talk</p>
+          <p>Weather explains much of daily demand, but not all of it. Adding human mobility and online search activity, such as Google Trends, lifted the model fit from R² = 0.79 with climate data alone to R² = 0.85 with all data sets.</p>
+          <p class="inclass"><b>In class:</b> a clear case for data literacy: which inputs actually help, and how to tell.</p>
+        </div>
+        <div class="proj-pics">
+          <figure class="pin solo"><img src="img/demand-drivers.jpg" alt="Sketch of weather, mobility and online behaviour driving water demand" loading="lazy"><figcaption>What drives demand</figcaption></figure>
+        </div>
+      </article>
+    </div>
+
+    <div class="era">
+      <div class="era-head"><h3>KWR Water Research Institute, the Netherlands</h3><span>Scientific Researcher, 2022 to 2024</span></div>
+      <div class="grid-small">
+        <div class="mini"><img src="img/savings-map.jpg" alt="Map of a Dutch drinking water supply area around Amsterdam" loading="lazy"><div class="body"><h4>Drinking water savings 2035</h4><p class="yr">National study for the Dutch drinking water sector</p><p>Analysis and a utility dashboard that turn household water-saving measures into savings for a supply area.</p></div></div>
+        <div class="mini"><img src="img/greenhouse-model.jpg" alt="Regression results for greenhouse water quality" loading="lazy"><div class="body"><h4>Water quality limits in horticulture</h4><p class="yr">With Stichting Control in Food &amp; Flowers</p><p>Machine learning models linking water quality to crop outcomes in greenhouses (R² = 0.88).</p></div></div>
+        <div class="mini"><img src="img/watermining-reactor.jpg" alt="Process diagram of a partial nitritation reactor" loading="lazy"><div class="body"><h4>Water Mining, EU</h4><p class="yr">EU research project</p><p>Data-driven models of pilot treatment units, a partial nitritation reactor and a reverse osmosis membrane.</p></div></div>
+        <div class="mini"><img src="img/ac-pipe-ring.jpg" alt="Finite element stress model of an asbestos cement pipe" loading="lazy"><div class="body"><h4>Leaching of asbestos cement pipes</h4><p class="yr">CCWI 2023</p><p>Finite element models of how uneven leaching weakens old asbestos cement mains.</p></div></div>
+        <div class="mini"><img src="img/microclimate.jpg" alt="Sketch of the energy balance between atmosphere, soil and buried pipes" loading="lazy"><div class="body"><h4>Micro-climate model</h4><p class="yr">Climate-adaptive infrastructure</p><p>Heat transfer from street to soil to buried pipes, to predict drinking water temperature in the network.</p></div></div>
+        <div class="mini"><img src="img/micropollutant.jpg" alt="Sketch of micropollutant removal in the lab and in a CFD-scaled reactor" loading="lazy"><div class="body"><h4>Micropollutant removal</h4><p class="yr">With TU Delft, published 2025</p><p>CFD model scaling up a light-driven photoanode: 80% removal of four micropollutants within 25 minutes.</p></div></div>
+      </div>
+      <p class="inclass" style="margin-top:22px"><b>In class:</b> these projects show students the range of a civil engineering degree, from soil heat transfer to treatment chemistry to asset condition.</p>
+    </div>
+
+    <div class="era">
+      <div class="era-head"><h3>Technion</h3><span>M.Sc. and Ph.D. research, 2016 to 2022</span></div>
+      <article class="proj wide">
+        <div class="proj-text">
+          <h3>Water networks in motion</h3>
+          <p>My graduate research was about operating water distribution networks better, from how a network is divided and pumped to how the flow itself can clean pipes and recover energy. Supervised by Prof. Avi Ostfeld.</p>
+          <ol class="pubs">
+            <li><span class="pa">Zeidan, M., Li, P., &amp; Ostfeld, A. (2021).</span> <a href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0001344" target="_blank" rel="noopener">DMA segmentation and multiobjective optimization for trading off water age, excess pressure, and pump operational cost in water distribution systems</a>. <i>Journal of Water Resources Planning and Management (ASCE)</i>.</li>
+            <li><span class="pa">Zeidan, M., &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0001539" target="_blank" rel="noopener">Using hydraulic transients for biofilm detachment in water distribution systems: approximated model</a>. <i>Journal of Water Resources Planning and Management (ASCE)</i>.</li>
+            <li><span class="pa">Zeidan, M., &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.3390/w14152437" target="_blank" rel="noopener">Unsteady friction modeling technique for Lagrangian approaches in transient simulations</a>. <i>Water</i>.</li>
+            <li><span class="pa">Zeidan, M., &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.3390/w14010021" target="_blank" rel="noopener">Hydraulic ram pump integration into water distribution systems for energy recovery application</a>. <i>Water</i>.</li>
+            <li><span class="pa">Zeidan, M., &amp; Ostfeld, A. (2023).</span> <a href="https://doi.org/10.1061/JHEND8.HYENG-13671" target="_blank" rel="noopener">Pressure transient utilization for pipeline particle deposits laceration</a>. <i>Journal of Hydraulic Engineering (ASCE)</i>.</li>
+            <li><span class="pa">Zeidan, M., Németh, M., Abhijith, G. R., Wéber, R., &amp; Ostfeld, A. (2024).</span> <a href="https://doi.org/10.3390/w16233492" target="_blank" rel="noopener">Transient flow dynamics in Tesla valve configurations: insights from computational fluid dynamics simulations</a>. <i>Water</i>.</li>
+          </ol>
+          <p class="inclass"><b>In class:</b> the hydraulic ram pump is my favourite fluid mechanics demonstration. It runs on nothing but the water's own momentum.</p>
+        </div>
+        <div class="proj-pics">
+          <figure class="pin span"><img src="img/phd-dma.jpg" alt="Three water networks divided into district metered areas, with closed pipes and bridge pipes marked" loading="lazy"><figcaption>Networks split into district metered areas (JWRPM 2021)</figcaption></figure>
+          <figure class="pin"><img src="img/phd-rampump.jpg" alt="Classic sketch of a hydraulic ram pump installation" loading="lazy"><figcaption>Hydraulic ram pump</figcaption></figure>
+          <figure class="pin"><img src="img/phd-tesla.jpg" alt="CFD pressure fields in Tesla valve configurations" loading="lazy"><figcaption>Tesla valve CFD</figcaption></figure>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+</div>
+<div class="panel" id="industry" data-panel="industry">
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Industry</p>
+      <h2>Engineering practice</h2>
+      <p class="prose muted">Consulting and field work alongside my academic career, and the utilities I work with directly.</p>
+    </div>
+    <div class="era">
+      <div class="era-head"><h3>Professional practice</h3><span>Zeidan Engineering Ltd, 2012 to present</span></div>
+      <article class="proj">
+        <div class="proj-text">
+          <h3>Water engineering projects</h3>
+          <p class="meta"><b>Consultant</b> since 2018 &nbsp;·&nbsp; <b>Geomatics technician</b> 2012 to 2018</p>
+          <p>On-call consulting on pipeline calculations, surface flow and drainage, sewage planning, and servicing for neighbourhood developments, for utilities and quarry clients. Before that, six years in the field on land surveying for quarry, road, infrastructure and building projects.</p>
+          <p class="inclass"><b>In class:</b> real drawings, real constraints and real clients for capstone and design projects, and the surveying basics students need before they design anything.</p>
+        </div>
+        <div class="proj-pics">
+          <figure class="pin"><img src="img/zeidan-2.jpg" alt="Drainage design for a quarry site on an aerial photo" loading="lazy"><figcaption>Quarry drainage</figcaption></figure>
+          <figure class="pin"><img src="img/zeidan-1.jpg" alt="Pipeline route and pressures on a terrain map" loading="lazy"><figcaption>Pipeline design</figcaption></figure>
+        </div>
+      </article>
+    </div>
+    <div class="era">
+      <div class="era-head"><h3>Utility partners</h3><span>Applied research delivered to operators</span></div>
+      <ul class="list">
+        <li><span class="y">2025 to now</span><span>City of Kelowna and City of Penticton, with Carollo on the Penticton corrosion study (NSERC Alliance)</span></li>
+        <li><span class="y">2022 to 2024</span><span>Dutch drinking water utilities through KWR's collective research programme, including a project I led as principal applicant (€75,000)</span></li>
+        <li><span class="y">2018 to now</span><span>Utilities, developers and quarry clients through Zeidan Engineering Ltd</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+<div class="panel" id="outreach" data-panel="outreach">
+<section id="outreach-s" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Outreach and community engineering</p>
+      <h2>Engineering with people, not for them</h2>
+      <p class="prose muted">Projects outside the classroom where students and communities built things together. This is what I would like to grow with student clubs and competitions.</p>
+    </div>
+    <div class="outreach">
+      <article class="story">
+        <div class="story-text">
+          <p class="eyebrow">2014 to 2019</p>
+          <h3>Engineers Without Borders, Technion</h3>
+          <p>Five years as a volunteer, three as group leader. We designed and built a wind turbine from scratch to supply renewable electricity to a school for students with special needs in East Jerusalem, and ran educational programs on sustainability and clean energy. I also worked with Bedouin communities in the Negev on solar heating.</p>
+          <p class="inclass"><b>What students learned:</b> design under real constraints, teamwork across disciplines, and finishing what they started.</p>
+        </div>
+        <div class="story-pics">
+          <figure class="pin"><img src="img/ewb-workshop.jpg" alt="Assembling the turbine in the workshop" loading="lazy"><figcaption>Workshop</figcaption></figure>
+          <figure class="pin"><img src="img/ewb-turbine.jpg" alt="Team lifting the turbine mast on the roof" loading="lazy"><figcaption>Raising the mast</figcaption></figure>
+          <figure class="pin"><img src="img/ewb-roof.jpg" alt="Volunteer next to the installed turbine" loading="lazy"><figcaption>Installed</figcaption></figure>
+          <figure class="pin"><img src="img/ewb-look.jpg" alt="Team looking up at the finished turbine" loading="lazy"><figcaption>First spin</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-text">
+          <p class="eyebrow">Summer 2016</p>
+          <h3>Engineering for Developing Communities, Tigray, Ethiopia</h3>
+          <p>Member of the summer delegation, providing technical support on water and energy infrastructure. We tested local water sources and worked with community members on solutions built from locally available materials.</p>
+          <p>It taught me root-cause analysis in places with few resources, and to approach a community with humility, curiosity and a collaborative spirit.</p>
+        </div>
+        <div class="story-pics">
+          <figure class="pin"><img src="img/eth-welcome.jpg" alt="Arriving in Ethiopia" loading="lazy"><figcaption>Arrival</figcaption></figure>
+          <figure class="pin"><img src="img/eth-petri.jpg" alt="Water quality test plates labelled Dam 1 and Dam 2" loading="lazy"><figcaption>Testing two water sources</figcaption></figure>
+          <figure class="pin"><img src="img/eth-well.jpg" alt="Stone-lined water source in a green field" loading="lazy"><figcaption>Local water source</figcaption></figure>
+          <figure class="pin"><img src="img/eth-land.jpg" alt="Highland landscape in Tigray" loading="lazy"><figcaption>Tigray highlands</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-text">
+          <p class="eyebrow">2022</p>
+          <h3>Educational aquaponic systems for two schools</h3>
+          <p>My own initiative. We won a grant from the Ministry of Agriculture for educational purposes and built aquaponic systems at two schools in the Arab community. Local farmers donated seedlings and took an active part.</p>
+          <p class="inclass"><b>Why it mattered:</b> students and farmers learned the water and nutrient cycle with their hands, instead of watching it on a screen.</p>
+        </div>
+        <div class="story-pics">
+          <figure class="pin"><img src="img/aqua-selfie.jpg" alt="Mohamad beside the aquaponic growing channels" loading="lazy"><figcaption>Growing channels</figcaption></figure>
+          <figure class="pin"><img src="img/aqua-minister.jpg" alt="Recognition from the Deputy Minister of Agriculture" loading="lazy"><figcaption>With the Deputy Minister of Agriculture</figcaption></figure>
+          <figure class="pin"><img src="img/aqua-lettuce.jpg" alt="Lettuce growing in the aquaponic system" loading="lazy" style="object-position:center 30%"><figcaption>First harvest</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <p style="font-size:1.25rem;font-weight:700;margin-top:6px">Mohamad Zeidan, Ph.D.</p>
+      <p class="muted">Kelowna, British Columbia</p>
+    </div>
+    <div>
+      <p>Email: <span id="em">mohamad.zeidan@ubc.ca</span><button class="copy" type="button" id="cp">Copy</button></p>
+      <p>ORCID: <a href="https://orcid.org/0000-0003-0967-4776" target="_blank" rel="noopener">0000-0003-0967-4776</a></p>
+      <p class="muted">P.Eng. registration with EGBC expected December 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var nu=1.0e-6,g=9.81;
+  function fmt(x,d){return x.toLocaleString('en-CA',{maximumFractionDigits:d,minimumFractionDigits:d})}
+  function calc(Q,D,L,eps){
+    var A=Math.PI*D*D/4,V=Q/A,Re=V*D/nu,f;
+    if(Re<2000){f=64/Re}else{var t=Math.log10(eps/(3.7*D)+5.74/Math.pow(Re,0.9));f=0.25/(t*t)}
+    return {V:V,Re:Re,f:f,hf:f*(L/D)*V*V/(2*g)};
+  }
+  function run(){
+    var Qls=+$('q').value,Dmm=+$('d').value,L=+$('l').value,eps=+$('m').value/1000;
+    $('qo').textContent=Qls+' L/s';$('do').textContent=Dmm+' mm';$('lo').textContent=L.toLocaleString('en-CA')+' m';
+    var r=calc(Qls/1000,Dmm/1000,L,eps),r2=calc(2*Qls/1000,Dmm/1000,L,eps);
+    $('rv').textContent=fmt(r.V,2)+' m/s';
+    $('rr').textContent=Math.round(r.Re).toLocaleString('en-CA');
+    $('rf').textContent=fmt(r.f,4);
+    $('rh').textContent=(r.hf<10?fmt(r.hf,2):fmt(r.hf,1))+' m';
+    var drop=Math.min(r.hf,60)/60*130, y2=60+drop;
+    $('hgl').setAttribute('y2',y2);$('dim').setAttribute('y2',y2);
+    var t=$('dimt');t.setAttribute('y',60+drop+20);t.textContent='hf = '+(r.hf<10?fmt(r.hf,2):fmt(r.hf,1))+' m'+(r.hf>60?' (off scale)':'');
+    $('hglt').setAttribute('y',60+drop*0.38-8);
+    var regime=r.Re<2000?'laminar':(r.Re<4000?'transitional':'turbulent');
+    var msg='Flow is '+regime+'. Doubling the flow would raise the head loss to '+(r2.hf<10?fmt(r2.hf,2):fmt(r2.hf,1))+' m, about '+fmt(r2.hf/r.hf,1)+' times as much.';
+    if(r.V>3)msg+=' At over 3 m/s, most designers would choose a bigger pipe.';
+    else if(r.V<0.3)msg+=' Below 0.3 m/s, water ages in the pipe and sediment settles.';
+    $('rn').textContent=msg;
+  }
+  ['q','d','l','m'].forEach(function(id){$(id).addEventListener('input',run)});
+  run();
+  var panels=[].slice.call(document.querySelectorAll('.panel')),tabs=[].slice.call(document.querySelectorAll('.tabs a'));
+  function show(){
+    var h=(location.hash||'').slice(1); if(h==='contact')return;
+    if(!panels.some(function(p){return p.id===h}))h='teaching';
+    panels.forEach(function(p){p.hidden=p.id!==h});
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===h?'true':'false')});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(e){
+    var id=t.dataset.tab; if(id==='contact')return;
+    e.preventDefault(); try{history.replaceState(null,'','#'+id)}catch(err){} show();
+    var el=document.getElementById(id); scrollTo({top:Math.max(0,el.getBoundingClientRect().top+scrollY-56),behavior:'smooth'});
+  })});
+  window.addEventListener('hashchange',show); show();
+  $('cp').addEventListener('click',function(){
+    var t=$('em').textContent,b=this;
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents($('em'));var s=getSelection();s.removeAllRanges();s.addRange(r);};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+
+</body>
+</html>
