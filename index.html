@@ -74,16 +74,29 @@ nav.top ul a[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--t
 
 .career{padding-block:8px 36px}
 .career-scroll{overflow-x:auto;padding-bottom:6px}
-.career-track{position:relative;min-width:760px;height:156px}
+.career-track{position:relative;min-width:760px;height:176px}
 .seg{position:absolute;top:22px;height:86px;padding:8px 10px;border-top:6px solid var(--navy);background:var(--card);box-shadow:0 4px 12px rgba(10,20,40,.08);display:flex;flex-direction:column;min-width:0;overflow:hidden}
 .seg.work{border-top-color:var(--teal)}
 .seg b{font-size:1.02rem;line-height:1.2;white-space:nowrap}
 .seg .sub{font-size:.78rem;color:var(--muted);line-height:1.25;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.seg .when{font-size:.76rem;color:var(--navy);margin-top:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
+.seg .when{font-size:.9rem;font-weight:700;color:var(--navy);margin-top:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
 .seg+.seg{margin-left:4px}
-.axis{position:absolute;left:0;right:0;top:122px;border-top:2px solid var(--line)}
-.tick{position:absolute;top:128px;transform:translateX(-50%);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.tick::before{content:"";position:absolute;left:50%;top:-8px;height:6px;border-left:2px solid var(--line)}
+.axis{position:absolute;left:0;right:14px;top:134px;border-top:3px solid var(--navy)}
+.axis::after{content:"";position:absolute;right:-16px;top:-9px;border-left:16px solid var(--navy);border-top:7.5px solid transparent;border-bottom:7.5px solid transparent}
+.seg::before{content:"";position:absolute;left:0;top:80px;height:22px;border-left:2px dashed var(--muted);opacity:.7}
+.seg::after{content:"";position:absolute;left:-6px;top:100px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--navy)}
+.seg.work::after{border-color:var(--teal)}
+.seg{overflow:visible}
+.seg .sub{max-width:100%}
+.tick{position:absolute;top:146px;transform:translateX(-50%);font-size:1rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.tick::before{content:"";position:absolute;left:50%;top:-12px;height:8px;border-left:2px solid var(--navy)}
+.slogo{position:absolute;top:7px;right:7px;height:22px;width:auto;background:#fff;padding:2px 4px;border-radius:3px}
+.slogo.tall{height:30px;padding:2px 3px}
+.elogo{height:38px;width:auto;align-self:center;background:#fff;padding:3px 6px;border-radius:4px}
+.elogo.tall{height:50px;padding:3px 4px}
+.lg{display:contents}
+.lg img{transition:transform .15s}
+.lg:hover img{transform:scale(1.08)}
 .career-key{font-size:.85rem;color:var(--muted);display:flex;gap:8px;align-items:center;margin-top:4px}
 .career-key .k{display:inline-block;width:18px;height:6px;background:var(--navy)}
 .career-key .k.work{background:var(--teal);margin-left:12px}
@@ -132,7 +145,7 @@ section+section{border-top:1px solid var(--line)}
 /* projects */
 .era{margin-top:56px}
 .era:first-of-type{margin-top:0}
-.era-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:6px;margin-bottom:28px}
+.era-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:6px;margin-bottom:28px}
 .era-head h3{font-size:var(--s2)}
 .era-head span{color:var(--muted);font-style:italic}
 .proj{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:56px}
@@ -190,6 +203,13 @@ section+section{border-top:1px solid var(--line)}
 
 .panel[hidden]{display:none!important}
 
+.pub-h{font-size:var(--s1);margin:32px 0 14px;padding-bottom:6px;border-bottom:2px solid var(--navy)}
+.publist{margin:0;padding-left:2em;display:grid;gap:14px;max-width:80ch}
+.publist .pa{color:var(--muted)}
+.publist .pa b{color:var(--ink)}
+.publist a,.publist .t{color:var(--ink);font-weight:600}
+.publist a{text-decoration-color:var(--teal)}
+.oa{display:inline-block;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--teal);border:1px solid var(--teal);padding:0 6px;margin-left:4px;vertical-align:1px}
 footer{padding-block:48px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .copy{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:2px 10px;cursor:pointer;margin-left:6px}
@@ -228,7 +248,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <li><a href="#research" data-tab="research">Research</a></li>
       <li><a href="#industry" data-tab="industry">Industry</a></li>
       <li><a href="#outreach" data-tab="outreach">Outreach</a></li>
-      <li><a href="#contact" data-tab="contact">Contact</a></li>
+      <li><a href="#publications" data-tab="publications">Publications</a></li>
     </ul>
   </div>
 </nav>
@@ -267,11 +287,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   <div class="wrap">
     <div class="career-scroll">
       <div class="career-track">
-        <div class="seg edu" style="left:7.37%;width:24.04%"><b>B.Sc.</b><span class="sub">Civil and Env. Eng., Technion</span><span class="when">2012 to 2016</span></div>
-        <div class="seg edu" style="left:31.41%;width:14.42%"><b>M.Sc.</b><span class="sub">Technion</span><span class="when">2016 to 2018</span></div>
-        <div class="seg edu" style="left:46.35%;width:25.12%"><b>Ph.D.</b><span class="sub">Technion</span><span class="when">2018 to 2022</span></div>
-        <div class="seg work" style="left:71.99%;width:13.91%"><b>KWR</b><span class="sub">Netherlands</span><span class="when">2022 to 2024</span></div>
-        <div class="seg work" style="left:87.5%;width:11.22%"><b>UBCO</b><span class="sub">Postdoc, lecturer</span><span class="when">2025 to now</span></div>
+        <div class="seg edu" style="left:7.37%;width:24.04%"><b>B.Sc.</b><a class="lg" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img class="slogo tall" src="img/logo-technion.png" alt="Technion website"></a><span class="sub">Civil and Env. Eng., Technion</span><span class="when">2012 to 2016</span></div>
+        <div class="seg edu" style="left:31.41%;width:14.42%"><b>M.Sc.</b><a class="lg" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img class="slogo tall" src="img/logo-technion.png" alt="Technion website"></a><span class="sub">Technion</span><span class="when">2016 to 2018</span></div>
+        <div class="seg edu" style="left:46.35%;width:25.12%"><b>Ph.D.</b><a class="lg" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img class="slogo tall" src="img/logo-technion.png" alt="Technion website"></a><span class="sub">Technion</span><span class="when">2018 to 2022</span></div>
+        <div class="seg work" style="left:71.99%;width:13.91%"><b>KWR</b><a class="lg" href="https://www.kwrwater.nl/en/" target="_blank" rel="noopener"><img class="slogo" src="img/logo-kwr.png" alt="KWR website"></a><span class="sub">Netherlands</span><span class="when">2022 to 2024</span></div>
+        <div class="seg work" style="left:87.5%;width:11.22%"><b>UBCO</b><a class="lg" href="https://ok.ubc.ca/" target="_blank" rel="noopener"><img class="slogo tall" src="img/logo-ubc.png" alt="UBC Okanagan website"></a><span class="sub">Postdoc, lecturer</span><span class="when">2025 to now</span></div>
         <div class="axis"></div>
         <span class="tick" style="left:2.56%">2012</span>
         <span class="tick" style="left:15.38%">2014</span>
@@ -465,7 +485,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     </div>
 
     <div class="era">
-      <div class="era-head"><h3>UBC Okanagan</h3><span>Postdoctoral Fellow, 2025 to present</span></div>
+      <div class="era-head"><a class="lg" href="https://ok.ubc.ca/" target="_blank" rel="noopener"><img class="elogo tall" src="img/logo-ubc.png" alt="UBC Okanagan website"></a><h3>UBC Okanagan</h3><span>Postdoctoral Fellow, 2025 to present</span></div>
 
       <article class="proj">
         <div class="proj-text">
@@ -510,20 +530,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     </div>
 
     <div class="era">
-      <div class="era-head"><h3>KWR Water Research Institute, the Netherlands</h3><span>Scientific Researcher, 2022 to 2024</span></div>
+      <div class="era-head"><a class="lg" href="https://www.kwrwater.nl/en/" target="_blank" rel="noopener"><img class="elogo" src="img/logo-kwr.png" alt="KWR website"></a><h3>KWR Water Research Institute, the Netherlands</h3><span>Scientific Researcher, 2022 to 2024</span></div>
       <div class="grid-small">
-        <div class="mini"><img src="img/savings-map.jpg" alt="Map of a Dutch drinking water supply area around Amsterdam" loading="lazy"><div class="body"><h4>Drinking water savings 2035</h4><p class="yr">National study for the Dutch drinking water sector</p><p>Analysis and a utility dashboard that turn household water-saving measures into savings for a supply area.</p></div></div>
-        <div class="mini"><img src="img/greenhouse-model.jpg" alt="Regression results for greenhouse water quality" loading="lazy"><div class="body"><h4>Water quality limits in horticulture</h4><p class="yr">With Stichting Control in Food &amp; Flowers</p><p>Machine learning models linking water quality to crop outcomes in greenhouses (R² = 0.88).</p></div></div>
-        <div class="mini"><img src="img/watermining-reactor.jpg" alt="Process diagram of a partial nitritation reactor" loading="lazy"><div class="body"><h4>Water Mining, EU</h4><p class="yr">EU research project</p><p>Data-driven models of pilot treatment units, a partial nitritation reactor and a reverse osmosis membrane.</p></div></div>
-        <div class="mini"><img src="img/ac-pipe-ring.jpg" alt="Finite element stress model of an asbestos cement pipe" loading="lazy"><div class="body"><h4>Leaching of asbestos cement pipes</h4><p class="yr">CCWI 2023</p><p>Finite element models of how uneven leaching weakens old asbestos cement mains.</p></div></div>
-        <div class="mini"><img src="img/microclimate.jpg" alt="Sketch of the energy balance between atmosphere, soil and buried pipes" loading="lazy"><div class="body"><h4>Micro-climate model</h4><p class="yr">Climate-adaptive infrastructure</p><p>Heat transfer from street to soil to buried pipes, to predict drinking water temperature in the network.</p></div></div>
-        <div class="mini"><img src="img/micropollutant.jpg" alt="Sketch of micropollutant removal in the lab and in a CFD-scaled reactor" loading="lazy"><div class="body"><h4>Micropollutant removal</h4><p class="yr">With TU Delft, published 2025</p><p>CFD model scaling up a light-driven photoanode: 80% removal of four micropollutants within 25 minutes.</p></div></div>
+        <div class="mini"><img src="img/savings-map.jpg" alt="Map of a Dutch drinking water supply area around Amsterdam" loading="lazy"><div class="body"><h4>Drinking water savings 2035</h4><p class="yr">National study for the Dutch drinking water sector</p><p>How household water-saving measures could reduce drinking water demand, with a dashboard for utilities.</p></div></div>
+        <div class="mini"><img src="img/greenhouse-tomatoes.jpg" alt="Tomatoes growing in a research greenhouse" loading="lazy" style="object-fit:cover"><div class="body"><h4>Water quality limits in horticulture</h4><p class="yr">With Stichting Control in Food &amp; Flowers</p><p>Data-driven analysis of irrigation water quality in greenhouse horticulture.</p></div></div>
+        <div class="mini"><img src="img/watermining-reactor.jpg" alt="Process diagram of a partial nitritation reactor" loading="lazy"><div class="body"><h4>Water Mining, EU</h4><p class="yr">EU research project</p><p>Data-driven modelling of pilot treatment units.</p></div></div>
+        <div class="mini"><img src="img/ac-pipe-ring.jpg" alt="Finite element stress model of an asbestos cement pipe" loading="lazy"><div class="body"><h4>Leaching of asbestos cement pipes</h4><p class="yr">CCWI 2023</p><p>Finite element modelling of ageing asbestos cement water mains.</p></div></div>
+        <div class="mini"><img src="img/microclimate.jpg" alt="Sketch of the energy balance between atmosphere, soil and buried pipes" loading="lazy"><div class="body"><h4>Micro-climate model</h4><p class="yr">Climate-adaptive infrastructure</p><p>Heat transfer between the street, the soil and buried pipes, and what it means for drinking water temperature.</p></div></div>
+        <div class="mini"><img src="img/micropollutant-cfd.jpg" alt="CFD concentration fields in a photoelectrochemical reactor" loading="lazy"><div class="body"><h4>Micropollutant removal</h4><p class="yr">With TU Delft, published 2025</p><p>Lab experiments and CFD modelling of a light-driven reactor for removing micropollutants from water.</p></div></div>
       </div>
       <p class="inclass" style="margin-top:22px"><b>In class:</b> these projects show students the range of a civil engineering degree, from soil heat transfer to treatment chemistry to asset condition.</p>
     </div>
 
     <div class="era">
-      <div class="era-head"><h3>Technion</h3><span>M.Sc. and Ph.D. research, 2016 to 2022</span></div>
+      <div class="era-head"><a class="lg" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img class="elogo tall" src="img/logo-technion.png" alt="Technion website"></a><h3>Technion</h3><span>M.Sc. and Ph.D. research, 2016 to 2022</span></div>
       <article class="proj wide">
         <div class="proj-text">
           <h3>Water networks in motion</h3>
@@ -640,6 +660,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   </div>
 </section>
 </div>
+<div class="panel" id="publications" data-panel="publications">
+<section id="pubs-s">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Publications</p>
+      <h2>Papers and proceedings</h2>
+      <p class="prose muted">Click a title to open the paper. Open access papers can be read in full for free. ORCID: <a href="https://orcid.org/0000-0003-0967-4776" target="_blank" rel="noopener">0000-0003-0967-4776</a></p>
+    </div>
+    <h3 class="pub-h">Peer-reviewed journal articles</h3>
+    <ol class="publist" reversed>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Peleato, N. (2026).</span> <a href="https://doi.org/10.1007/s44285-026-00076-5" target="_blank" rel="noopener">Behaviorally informed modeling of daily urban water demand: integrating environmental drivers, mobility, and online search activity</a>. <i>Urban Lifeline, 4, 21</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa">Xu, Y., <b>Zeidan, M.</b>, &amp; Peleato, N. (2026).</span> <a href="https://doi.org/10.1007/s44285-026-00071-w" target="_blank" rel="noopener">Fluorescence-informed water quality prediction in water distribution systems</a>. <i>Urban Lifeline</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa">Ali, A. Z., Wu, Y., Wols, B., <b>Zeidan, M.</b>, Spanjers, H., &amp; van der Hoek, J. P. (2025).</span> <a href="https://repository.tudelft.nl/record/uuid:6d0a6a20-61fc-40f1-b04c-7846481dcaf0" target="_blank" rel="noopener">Simultaneous removal of multiple organic micropollutants via UV-visible light driven BiVO₄/TiO₂-GO photoanode: experimental and CFD study</a>. <i>Chemical Engineering Journal Advances, 22, 100721</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Németh, M., Abhijith, G. R., Wéber, R., &amp; Ostfeld, A. (2024).</span> <a href="https://doi.org/10.3390/w16233492" target="_blank" rel="noopener">Transient flow dynamics in Tesla valve configurations: insights from computational fluid dynamics simulations</a>. <i>Water, 16(23), 3492</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa">Pointl, M., Marques, J., Pick, F. C., Salcedo, C., Vertommen, I., <b>Zeidan, M.</b>, et al. (2024).</span> <a href="https://doi.org/10.3390/w16131862" target="_blank" rel="noopener">Future Water: a multi-university international web seminar</a>. <i>Water, 16(13), 1862</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2023).</span> <a href="https://doi.org/10.1061/JHEND8.HYENG-13671" target="_blank" rel="noopener">Pressure transient utilization for pipeline particle deposits laceration</a>. <i>Journal of Hydraulic Engineering (ASCE)</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.3390/w14152437" target="_blank" rel="noopener">Unsteady friction modeling technique for Lagrangian approaches in transient simulations</a>. <i>Water, 14(15), 2437</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0001539" target="_blank" rel="noopener">Using hydraulic transients for biofilm detachment in water distribution systems: approximated model</a>. <i>Journal of Water Resources Planning and Management (ASCE), 148(4), 04022008</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2022).</span> <a href="https://doi.org/10.3390/w14010021" target="_blank" rel="noopener">Hydraulic ram pump integration into water distribution systems for energy recovery application</a>. <i>Water, 14(1), 21</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Li, P., &amp; Ostfeld, A. (2021).</span> <a href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0001344" target="_blank" rel="noopener">DMA segmentation and multiobjective optimization for trading off water age, excess pressure, and pump operational cost in water distribution systems</a>. <i>Journal of Water Resources Planning and Management (ASCE), 147(4), 04021006</i>.</li>
+    </ol>
+    <h3 class="pub-h">Peer-reviewed conference papers</h3>
+    <ol class="publist" reversed>
+          <li><span class="pa"><b>Zeidan, M.</b>, Yondonjamts, D., Németh, M., Abhijith, G. R., Wéber, R., &amp; Ostfeld, A. (2024).</span> <a href="https://www.mdpi.com/2673-4591/69/1/195" target="_blank" rel="noopener">Transient flow dynamics in Tesla valve configurations</a>. <i>Engineering Proceedings, 69, 195</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Hillebrand, B., &amp; Blokker, M. (2024).</span> <a href="https://www.mdpi.com/2673-4591/69/1/34" target="_blank" rel="noopener">Legacy pipes unearthed: decrypting the enigma of pressure dynamics and burst events in Limburg, the Netherlands</a>. <i>Engineering Proceedings, 69, 34</i>. <span class="oa">Open access</span></li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Li, P., &amp; Ostfeld, A. (2022).</span> <span class="t">Unsteady friction modeling technique for Lagrangian approaches in transient simulations</span>. <i>WDSA/CCWI Joint Conference Proceedings</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2022).</span> <span class="t">Hydraulic transient assault capabilities in water distribution systems</span>. <i>World Environmental and Water Resources Congress (ASCE), 1036 to 1040</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2022).</span> <span class="t">Hydraulic ram pump application in urban water distribution systems</span>. <i>World Environmental and Water Resources Congress (ASCE), 1029 to 1035</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2021).</span> <span class="t">Employing transient wall shear stress for biofilm separation in water distribution systems</span>. <i>EWRI World Environmental and Water Resources Congress</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, &amp; Ostfeld, A. (2021).</span> <span class="t">Inducing transient wave interferences for imitating pressure signature in water distribution systems</span>. <i>EWRI World Environmental and Water Resources Congress</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Li, P., &amp; Ostfeld, A. (2018).</span> <span class="t">Decomposing water distribution systems into district metered areas for leakage and water age reduction</span>. <i>EWRI World Environmental and Water Resources Congress, Minneapolis</i>.</li>
+          <li><span class="pa"><b>Zeidan, M.</b>, Chen, J., Geletu, A., Li, P., &amp; Ostfeld, A. (2018).</span> <span class="t">Clustering and multi-objective operation of water distribution systems: water age, leakage, and cost trade-off</span>. <i>WDSA/CCWI Joint Conference Proceedings</i>.</li>
+          <li><span class="pa">Chen, J., <b>Zeidan, M.</b>, Ostfeld, A., Geletu, A., &amp; Li, P. (2018).</span> <span class="t">Analysis of relations between pressure and water age in water distribution systems</span>. <i>WDSA/CCWI Joint Conference Proceedings</i>.</li>
+    </ol>
+  </div>
+</section>
+</div>
 </main>
 
 <footer id="contact">
@@ -689,13 +746,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   run();
   var panels=[].slice.call(document.querySelectorAll('.panel')),tabs=[].slice.call(document.querySelectorAll('.tabs a'));
   function show(){
-    var h=(location.hash||'').slice(1); if(h==='contact')return;
+    var h=(location.hash||'').slice(1);
     if(!panels.some(function(p){return p.id===h}))h='teaching';
     panels.forEach(function(p){p.hidden=p.id!==h});
     tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===h?'true':'false')});
   }
   tabs.forEach(function(t){t.addEventListener('click',function(e){
-    var id=t.dataset.tab; if(id==='contact')return;
+    var id=t.dataset.tab;
     e.preventDefault(); try{history.replaceState(null,'','#'+id)}catch(err){} show();
     var el=document.getElementById(id); scrollTo({top:Math.max(0,el.getBoundingClientRect().top+scrollY-56),behavior:'smooth'});
   })});
