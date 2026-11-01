@@ -148,12 +148,18 @@ section+section{border-top:1px solid var(--line)}
 .era-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:6px;margin-bottom:28px}
 .era-head h3{font-size:var(--s2)}
 .era-head span{color:var(--muted);font-style:italic}
-.proj{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:56px}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-bottom:56px}
 .proj:nth-child(even) .proj-pics{order:2}
 .proj-text{min-width:0;display:grid;gap:10px}
 .proj.wide{grid-template-columns:1fr}
 .proj.wide .proj-pics{order:0;grid-template-columns:1fr 1fr;max-width:900px}
+.proj-pics .pin.crop img{aspect-ratio:1/1;object-fit:cover}
+.proj-pics .pin.c43 img{aspect-ratio:4/3;object-fit:cover}
+.proj-pics.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.proj-pics.three .pin.crop img{aspect-ratio:3/4}
 .proj-pics .pin.span{grid-column:1/-1;transform:rotate(-.6deg)}
+.ticks{margin:2px 0;padding-left:1.2em;display:grid;gap:4px}
+.ticks li::marker{color:var(--teal)}
 .pubs{margin:4px 0;padding-left:1.3em;display:grid;gap:8px}
 .pubs .pa{color:var(--muted)}
 .pubs a{color:var(--ink);font-weight:600;text-decoration-color:var(--teal)}
@@ -579,25 +585,68 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <p class="prose muted">Consulting and field work alongside my academic career, and the utilities I work with directly.</p>
     </div>
     <div class="era">
-      <div class="era-head"><h3>Professional practice</h3><span>Zeidan Engineering Ltd, 2012 to present</span></div>
+      <div class="era-head"><h3>Zeidan Engineering Ltd</h3><span>Israel, 2012 to present</span></div>
+
       <article class="proj">
         <div class="proj-text">
-          <h3>Water engineering projects</h3>
-          <p class="meta"><b>Consultant</b> since 2018 &nbsp;·&nbsp; <b>Geomatics technician</b> 2012 to 2018</p>
-          <p>On-call consulting on pipeline calculations, surface flow and drainage, sewage planning, and servicing for neighbourhood developments, for utilities and quarry clients. Before that, six years in the field on land surveying for quarry, road, infrastructure and building projects.</p>
-          <p class="inclass"><b>In class:</b> real drawings, real constraints and real clients for capstone and design projects, and the surveying basics students need before they design anything.</p>
+          <p class="eyebrow">2018 to present | On call</p>
+          <h3>Water Engineering Consultant</h3>
+          <p>Consulting in water engineering for water utilities, industrial clients (mainly quarries) and private developments: planning, design and optimisation of water and wastewater systems.</p>
+          <ul class="ticks">
+            <li>Pipeline design and network calculations</li>
+            <li>Runoff and stormwater management</li>
+            <li>Sewage planning and infrastructure layout for neighbourhood developments</li>
+            <li>Asset management: condition assessment, system evaluation and long-term planning</li>
+            <li>Aquaponic system design and implementation</li>
+          </ul>
+          <p class="inclass"><b>In class:</b> real drawings, real constraints and real clients for capstone and design projects.</p>
         </div>
         <div class="proj-pics">
-          <figure class="pin"><img src="img/zeidan-2.jpg" alt="Drainage design for a quarry site on an aerial photo" loading="lazy"><figcaption>Quarry drainage</figcaption></figure>
-          <figure class="pin"><img src="img/zeidan-1.jpg" alt="Pipeline route and pressures on a terrain map" loading="lazy"><figcaption>Pipeline design</figcaption></figure>
+          <figure class="pin span"><img src="img/zeidan-slam.jpg" alt="Point cloud from a handheld SLAM laser scan of a site" loading="lazy"><figcaption>Point cloud from a handheld SLAM laser scan</figcaption></figure>
+          <figure class="pin c43"><img src="img/zeidan-1.jpg" alt="Pipeline route and pressures on a terrain map" loading="lazy"><figcaption>Pipeline design</figcaption></figure>
+          <figure class="pin c43"><img src="img/zeidan-2.jpg" alt="Drainage design for a quarry site on an aerial photo" loading="lazy"><figcaption>Quarry stormwater</figcaption></figure>
+          <figure class="pin c43"><img src="img/zeidan-3.jpg" alt="Servicing plan for a development" loading="lazy"><figcaption>Servicing layout</figcaption></figure>
+          <figure class="pin c43"><img src="img/zeidan-4.jpg" alt="Runoff paths on an aerial photo" loading="lazy"><figcaption>Runoff paths</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-text">
+          <p class="eyebrow">2012 to 2018 | Part time, on site</p>
+          <h3>Geomatics Technician</h3>
+          <p>Field engineering and land surveying for infrastructure, road and building projects, working closely with field crews so survey data and engineering plans were built correctly.</p>
+          <ul class="ticks">
+            <li>Site measurements and topographic and tree surveys with total stations, GPS and drones</li>
+            <li>Technical drawings and layouts for design and construction</li>
+            <li>Industrial facilities: concrete plants, crushers, screening systems, settling basins and storage units</li>
+            <li>Construction coordination and problem-solving on site</li>
+          </ul>
+          <p class="inclass"><b>In class:</b> the surveying and site basics students need before they design anything.</p>
+        </div>
+        <div class="proj-pics three">
+          <figure class="pin span"><img src="img/geo-totalstation.jpg" alt="Robotic total station set up above a quarry" loading="lazy"><figcaption>Total station survey at a quarry</figcaption></figure>
+          <figure class="pin crop"><img src="img/geo-trench.jpg" alt="Excavated trench with steel pipes during installation" loading="lazy"><figcaption>Pipe installation on site</figcaption></figure>
+          <figure class="pin crop"><img style="object-position:center 60%" src="img/geo-excavator.jpg" alt="Mohamad operating a mini excavator on a construction site" loading="lazy"><figcaption>On site</figcaption></figure>
+          <figure class="pin crop"><img style="object-position:center bottom" src="img/geo-drone.jpg" alt="Drone survey and GNSS rover above a quarry" loading="lazy"><figcaption>Drone and GPS survey</figcaption></figure>
         </div>
       </article>
     </div>
+
+    <div class="era">
+      <div class="era-head"><h3>Certifications</h3><span>Professional standing</span></div>
+      <ul class="list">
+        <li><span class="y">Expected Dec 2026</span><span>Professional Engineer (P.Eng.), Engineers and Geoscientists British Columbia</span></li>
+        <li><span class="y">2025</span><span>Verified International Academic Qualifications, World Education Services (WES)</span></li>
+        <li><span class="y">2018</span><span>Certified Water/Wastewater Infrastructure Field Supervisor, Ministry of Labor, Israel</span></li>
+        <li><span class="y">2016</span><span>Certified Water Engineer, Ministry of Labor, Israel</span></li>
+      </ul>
+    </div>
+
     <div class="era">
       <div class="era-head"><h3>Utility partners</h3><span>Applied research delivered to operators</span></div>
       <ul class="list">
-        <li><span class="y">2025 to now</span><span>City of Kelowna and City of Penticton, with Carollo on the Penticton corrosion study (NSERC Alliance)</span></li>
-        <li><span class="y">2022 to 2024</span><span>Dutch drinking water utilities through KWR's collective research programme, including a project I led as principal applicant (€75,000)</span></li>
+        <li><span class="y">2025 to now</span><span>Municipal water utilities in the Okanagan Valley</span></li>
+        <li><span class="y">2022 to 2024</span><span>Dutch water utilities</span></li>
         <li><span class="y">2018 to now</span><span>Utilities, developers and quarry clients through Zeidan Engineering Ltd</span></li>
       </ul>
     </div>
